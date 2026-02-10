@@ -20,14 +20,17 @@
     ]
   },
   "scripts": {
-    "build": "ts-node src/build.ts",
-    "compile": "tsc -p .",
+    "vscode:prepublish": "npm run build",
+    "build": "npm run compile && node out/extension.js",
+    "package": "vsce package",
+    "compile": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --minify",
     "watch": "tsc -watch -p ."
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
     "@types/vscode": "^1.105.0",
     "ts-node": "^10.0.0",
+    "esbuild": "^0.27.3",
     "typescript": "^4.0.0"
   }
 }

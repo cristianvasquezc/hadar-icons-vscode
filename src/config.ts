@@ -1,9 +1,6 @@
 import { IconTheme } from './types';
 
 export const config: IconTheme = {
-  file: 'file',
-  folder: 'folder',
-  folderExpanded: 'folder-open',
   iconDefinitions: {
     folder: {
       iconPath: './icons/folder.svg',
@@ -5350,4 +5347,10 @@ export const config: IconTheme = {
       '.idea': 'folder-intellij-open_light',
     },
   },
+  file: 'file',
+  folder: 'folder',
+  folderExpanded: 'folder-open',
+  rootFolder: 'folder-root',
+  rootFolderExpanded: 'folder-root-open',
+  hidesExplorerArrows: true,
 };

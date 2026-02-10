@@ -2,8 +2,7 @@
 .vscode-test/**
 .gitignore
 vsc-extension-quickstart.md
-out/build-themes.js
-out/test/**
+out/**
 src/**
 .vscodeignore
 tsconfig.json
