@@ -1,0 +1,33 @@
+{
+  "name": "hadar-icons",
+  "displayName": "Hadar Icons",
+  "description": "Icon theme for VS Code",
+  "version": "1.0.0",
+  "publisher": "cristianvasquez",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Icon Themes"
+  ],
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "hadar-icons",
+        "label": "Hadar Icons",
+        "path": "./themes/hadar-icons.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "ts-node src/build.ts",
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p ."
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "@types/vscode": "^1.105.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.0.0"
+  }
+}
