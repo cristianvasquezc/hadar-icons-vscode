@@ -3,6 +3,7 @@
 .gitignore
 vsc-extension-quickstart.md
 out/**
+!out/extension.js
 src/**
 .vscodeignore
 tsconfig.json

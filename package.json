@@ -7,10 +7,20 @@
   "engines": {
     "vscode": "^1.105.0"
   },
+  "main": "./out/extension.js",
   "categories": [
     "Icon Themes"
   ],
+  "activationEvents": [
+    "onCommand:hadarIcons.changeFolderColor"
+  ],
   "contributes": {
+    "commands": [
+      {
+        "command": "hadarIcons.changeFolderColor",
+        "title": "Hadar Icons: Change Folder Color"
+      }
+    ],
     "iconThemes": [
       {
         "id": "hadar-icons",
@@ -21,9 +31,11 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run build",
-    "build": "npm run compile && node out/extension.js",
+    "build": "npm run compile && node out/build-icons.js",
     "package": "vsce package",
-    "compile": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "compile": "npm run bundle-extension && npm run bundle-build-script",
+    "bundle-extension": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "bundle-build-script": "esbuild ./src/build-icons.ts --bundle --outfile=out/build-icons.js --platform=node --format=cjs --minify",
     "watch": "tsc -watch -p ."
   },
   "devDependencies": {
