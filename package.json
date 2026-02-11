@@ -44,9 +44,11 @@
     "customizable"
   ],
   "activationEvents": [
+    "onStartupFinished",
     "onCommand:hadarIcons.changeFolderColor",
     "onCommand:hadarIcons.toggleExplorerArrows",
-    "onCommand:hadarIcons.activate"
+    "onCommand:hadarIcons.activate",
+    "onCommand:hadarIcons.configureIconPacks"
   ],
   "contributes": {
     "commands": [
