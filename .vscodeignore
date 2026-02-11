@@ -4,6 +4,7 @@
 vsc-extension-quickstart.md
 out/**
 !out/extension.js
+!out/web/extension.js
 src/**
 .vscodeignore
 tsconfig.json
