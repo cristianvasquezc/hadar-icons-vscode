@@ -23,8 +23,7 @@
   },
   "main": "./out/extension.js",
   "categories": [
-    "Themes",
-    "Icon Themes"
+    "Themes"
   ],
   "keywords": [
     "hadar theme",
