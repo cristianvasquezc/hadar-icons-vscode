@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#64B5F6;}
+	.st1{fill:#1565C0;}
+	.st2{fill:#1E88E5;}
+	.st3{fill:#0A44C2;}
+	.st4{fill:#42A5F5;}
+	.st5{fill:#90CAF9;}
+</style>
+<g transform="matrix(.94356 0 0 .94356 1.1289 1.1289)">
+	<path id="Flame" class="st0" d="M4.1,854.6h85.1v198.4h198.5v85.1H4.1V854.6z"/>
+	<path id="Wings" class="st1" d="M4.1,334.9v259.9L169.5,765l70.9-75.8L453,901.9l-70.9,70.9l165.4,165.3h259.9
+		c26.1,0,47.2-21.1,47.2-47.3v-378L429.4,287.6h-378C25.3,287.6,4.1,308.8,4.1,334.9L4.1,334.9z"/>
+	<path id="Body" class="st2" d="M208.7,686.2c-15.9-15.9-18.4-40.9-5.9-59.6L590.3,46.1c17.5-26.3,47-42,78.6-42h422
+		c26.1,0,47.3,21.1,47.3,47.3v421.9c0,31.6-15.8,61.1-42,78.6L515.7,939.4c-18.7,12.5-43.7,10-59.6-5.9L208.7,686.2z"/>
+	<g id="Wing_shadow" transform="matrix(.79626 0 0 .79626 4.0749 4.0749)">
+		<path class="st3" d="M296,1040.4l453.1-453.1l87.7,87.7l-453.1,453.1L296,1040.4z"/>
+	</g>
+	<path id="Wing" class="st0" d="M239.8,832.5l360.8-360.7l69.9,69.9L309.6,902.4L239.8,832.5z"/>
+	<path id="Intersect" class="st4" d="M367.3,844.7l-69.9-69.9l303.1-303.1l69.9,69.9L367.3,844.7z"/>
+	<g id="Window_shadow" transform="matrix(.79626 0 0 .79626 4.0749 4.0749)">
+		<path class="st3" d="M1068.2,534.1c98.3,0,178-79.7,178-178s-79.7-178-178-178s-178,79.7-178,178S969.9,534.1,1068.2,534.1z"/>
+	</g>
+	<path id="Window" class="st5" d="M854.6,429.4c78.3,0,141.8-63.5,141.8-141.7s-63.5-141.7-141.8-141.7s-141.8,63.5-141.8,141.7
+		S776.4,429.4,854.6,429.4z"/>
+</g>
+</svg>

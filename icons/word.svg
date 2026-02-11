@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#41A5EE;}
+	.st1{fill:#2B7CD3;}
+	.st2{fill:#185ABD;}
+	.st3{fill:#103F91;}
+	.st4{opacity:0.1;enable-background:new    ;}
+	.st5{opacity:0.2;enable-background:new    ;}
+	.st6{fill:url(#SVGID_1_);}
+	.st7{fill:#FFFFFF;}
+</style>
+<path class="st0" d="M1029.4,42.5H299.4c-25.2,0-45.6,20.4-45.6,45.6l0,0v203.2l423,124.4L1075,291.3V88.1
+	C1075,62.9,1054.6,42.5,1029.4,42.5L1029.4,42.5z"/>
+<path class="st1" d="M1075,291.3H253.8V540l423,74.6L1075,540V291.3z"/>
+<path class="st2" d="M253.8,540v248.8L652,838.5l423-49.8V540H253.8z"/>
+<path class="st3" d="M299.4,1037.5h729.9c25.2,0,45.6-20.4,45.6-45.6l0,0V788.8H253.8v203.2C253.8,1017.1,274.3,1037.5,299.4,1037.5
+	L299.4,1037.5z"/>
+<path class="st4" d="M556.6,241.5H253.8v621.9h302.8c25.2-0.1,45.5-20.4,45.6-45.6V287.1C602.1,261.9,581.8,241.6,556.6,241.5z"/>
+<path class="st5" d="M531.7,266.4H253.8v621.9h277.9c25.2-0.1,45.5-20.4,45.6-45.6V312C577.2,286.8,556.9,266.5,531.7,266.4z"/>
+<path class="st5" d="M531.7,266.4H253.8v572.1h277.9c25.2-0.1,45.5-20.4,45.6-45.6V312C577.2,286.8,556.9,266.5,531.7,266.4z"/>
+<path class="st5" d="M506.8,266.4h-253v572.1h253c25.2-0.1,45.5-20.4,45.6-45.6V312C552.4,286.8,532,266.5,506.8,266.4z"/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="100.1421" y1="-441.2906" x2="457.2995" y2="177.2912" gradientTransform="matrix(1 0 0 1 0 672)">
+	<stop  offset="0" style="stop-color:#2368C4"/>
+	<stop  offset="0.5" style="stop-color:#1A5DBE"/>
+	<stop  offset="1" style="stop-color:#1146AC"/>
+</linearGradient>
+<path class="st6" d="M50.6,266.4h456.2c25.2,0,45.6,20.4,45.6,45.6V768c0,25.2-20.4,45.6-45.6,45.6H50.6C25.4,813.6,5,793.2,5,768
+	V312C5,286.8,25.4,266.4,50.6,266.4z"/>
+<path class="st7" d="M192.2,616.1c0.9,7,1.5,13.2,1.8,18.4h1c0.4-5,1.2-11,2.5-18c1.3-7,2.4-12.9,3.4-17.8l48-206.9h62l49.8,203.8
+	c2.9,12.7,5,25.5,6.2,38.5h0.8c0.9-12.5,2.7-25,5.2-37.3l39.7-205H469l-69.7,296.5h-66L286,491.8c-1.4-5.6-2.9-13-4.7-22.1
+	c-1.7-9.1-2.8-15.7-3.2-19.9h-0.8c-0.5,4.8-1.6,12-3.2,21.5c-1.6,9.5-2.9,16.5-3.8,21.1l-44.4,195.7h-67.1L88.7,391.8h57.5
+	l43.2,207.3C190.4,603.4,191.3,609.1,192.2,616.1z"/>
+</svg>
