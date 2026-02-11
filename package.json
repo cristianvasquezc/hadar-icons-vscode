@@ -1,15 +1,39 @@
 {
   "name": "hadar-icons",
   "displayName": "Hadar Icons",
-  "description": "Icon theme for VS Code",
+  "description": "The ultimate icon theme for modern development. Features vibrant visual hierarchy, customizable folder colors, and specialized icon packs for Angular, NestJS, React, Vue, NgRx, Redux, and Vuex.",
   "version": "1.0.0",
   "publisher": "cristianvasquez",
+  "icon": "images/logo.png",
+  "author": {
+    "name": "Cristian Vásquez",
+    "email": "cristianvasquez.info@gmail.com"
+  },
+  "homepage": "https://hadartheme.netlify.app/",
+  "galleryBanner": {
+    "color": "#00030F",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.105.0"
   },
   "main": "./out/extension.js",
   "categories": [
+    "Themes",
     "Icon Themes"
+  ],
+  "keywords": [
+    "hadar theme",
+    "hadar",
+    "icons",
+    "icon theme",
+    "theme",
+    "vscode",
+    "angular",
+    "nestjs",
+    "react",
+    "vue",
+    "customizable"
   ],
   "activationEvents": [
     "onCommand:hadarIcons.changeFolderColor",
@@ -39,6 +63,7 @@
       {
         "id": "hadar-icons",
         "label": "Hadar Icons",
+        "description": "Vibrant, customizable icons with framework support",
         "path": "./themes/hadar-icons.json"
       }
     ],
