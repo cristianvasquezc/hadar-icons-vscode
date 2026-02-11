@@ -13,7 +13,8 @@
   ],
   "activationEvents": [
     "onCommand:hadarIcons.changeFolderColor",
-    "onCommand:hadarIcons.configureIconPacks"
+    "onCommand:hadarIcons.configureIconPacks",
+    "onCommand:hadarIcons.toggleExplorerArrows"
   ],
   "contributes": {
     "commands": [
@@ -24,6 +25,10 @@
       {
         "command": "hadarIcons.configureIconPacks",
         "title": "Hadar Icons: Configure Icon Packs"
+      },
+      {
+        "command": "hadarIcons.toggleExplorerArrows",
+        "title": "Hadar Icons: Toggle Explorer Arrows"
       }
     ],
     "iconThemes": [

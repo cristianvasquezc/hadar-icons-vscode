@@ -152,6 +152,51 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(configurePacksDisposable);
+
+  let toggleArrowsDisposable = vscode.commands.registerCommand(
+    'hadarIcons.toggleExplorerArrows',
+    async () => {
+      try {
+        const isHidden = await toggleArrows(context);
+        const status = isHidden ? 'Hidden' : 'Visible';
+        const reload = await vscode.window.showInformationMessage(
+          `Explorer arrows are now ${status}. Reload window to apply changes?`,
+          'Reload',
+        );
+        if (reload === 'Reload') {
+          vscode.commands.executeCommand('workbench.action.reloadWindow');
+        }
+      } catch (error: any) {
+        vscode.window.showErrorMessage(
+          `Failed to toggle explorer arrows: ${error.message}`,
+        );
+      }
+    },
+  );
+
+  context.subscriptions.push(toggleArrowsDisposable);
+}
+
+async function toggleArrows(
+  context: vscode.ExtensionContext,
+): Promise<boolean> {
+  const themesDir = path.join(context.extensionPath, 'themes');
+  const jsonPath = path.join(themesDir, 'hadar-icons.json');
+
+  if (!fs.existsSync(jsonPath)) {
+    throw new Error('Theme file not found');
+  }
+
+  const jsonContent = fs.readFileSync(jsonPath, 'utf8');
+  const config = JSON.parse(jsonContent);
+
+  // Toggle the value
+  const currentValue = config.hidesExplorerArrows === true;
+  config.hidesExplorerArrows = !currentValue;
+
+  fs.writeFileSync(jsonPath, JSON.stringify(config, null, 2), 'utf8');
+
+  return config.hidesExplorerArrows;
 }
 
 async function updateIconPacks(
