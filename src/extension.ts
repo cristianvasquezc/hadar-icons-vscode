@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as vscode from 'vscode';
+import { IconPack, packs } from './packs';
 
 export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
@@ -102,6 +103,90 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(disposable);
+
+  let configurePacksDisposable = vscode.commands.registerCommand(
+    'hadarIcons.configureIconPacks',
+    async () => {
+      // Find currently active pack from globalState
+      const activePackName = context.globalState.get<string>(
+        'hadarIcons.activeIconPack',
+        'angular',
+      );
+
+      const selectedPack = await vscode.window.showQuickPick(
+        packs.map((pack) => ({
+          label: pack.label,
+          description: pack.name === activePackName ? '(Active)' : '',
+          detail: pack.detail,
+          pack: pack,
+        })),
+        {
+          canPickMany: false,
+          placeHolder: 'Select an icon pack configuration',
+        },
+      );
+
+      if (selectedPack) {
+        // Update state
+        await context.globalState.update(
+          'hadarIcons.activeIconPack',
+          selectedPack.pack.name,
+        );
+
+        try {
+          await updateIconPacks(context, selectedPack.pack);
+          const reload = await vscode.window.showInformationMessage(
+            `Icon pack set to ${selectedPack.label}. Reload window to apply changes?`,
+            'Reload',
+          );
+          if (reload === 'Reload') {
+            vscode.commands.executeCommand('workbench.action.reloadWindow');
+          }
+        } catch (error: any) {
+          vscode.window.showErrorMessage(
+            `Failed to update icon packs: ${error.message}`,
+          );
+        }
+      }
+    },
+  );
+
+  context.subscriptions.push(configurePacksDisposable);
+}
+
+async function updateIconPacks(
+  context: vscode.ExtensionContext,
+  activePack: IconPack,
+) {
+  const themesDir = path.join(context.extensionPath, 'themes');
+  const jsonPath = path.join(themesDir, 'hadar-icons.json');
+
+  if (!fs.existsSync(jsonPath)) {
+    return;
+  }
+
+  const jsonContent = fs.readFileSync(jsonPath, 'utf8');
+  const config = JSON.parse(jsonContent);
+
+  if (!config.fileExtensions) {
+    config.fileExtensions = {};
+  }
+
+  // 1. Remove all extensions managed by ANY pack to ensure clean state
+  for (const pack of packs) {
+    for (const ext of Object.keys(pack.fileExtensions)) {
+      if (config.fileExtensions[ext]) {
+        delete config.fileExtensions[ext];
+      }
+    }
+  }
+
+  // 2. Add extensions from ACTIVE pack
+  for (const [ext, icon] of Object.entries(activePack.fileExtensions)) {
+    config.fileExtensions[ext] = icon;
+  }
+
+  fs.writeFileSync(jsonPath, JSON.stringify(config, null, 2), 'utf8');
 }
 
 async function updateIconFiles(

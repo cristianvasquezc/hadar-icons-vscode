@@ -12,13 +12,18 @@
     "Icon Themes"
   ],
   "activationEvents": [
-    "onCommand:hadarIcons.changeFolderColor"
+    "onCommand:hadarIcons.changeFolderColor",
+    "onCommand:hadarIcons.configureIconPacks"
   ],
   "contributes": {
     "commands": [
       {
         "command": "hadarIcons.changeFolderColor",
         "title": "Hadar Icons: Change Folder Color"
+      },
+      {
+        "command": "hadarIcons.configureIconPacks",
+        "title": "Hadar Icons: Configure Icon Packs"
       }
     ],
     "iconThemes": [
