@@ -129,11 +129,9 @@ export function activate(context: vscode.ExtensionContext) {
   let configurePacksDisposable = vscode.commands.registerCommand(
     'hadarIcons.configureIconPacks',
     async () => {
-      // Find currently active pack from globalState
-      const activePackName = context.globalState.get<string>(
-        'hadarIcons.activeIconPack',
-        'angular',
-      );
+      // Find currently active pack from configuration
+      const config = vscode.workspace.getConfiguration('hadar-icons');
+      const activePackName = config.get<string>('activeIconPack', 'angular');
 
       const selectedPack = await vscode.window.showQuickPick(
         packs.map((pack) => ({
@@ -149,24 +147,16 @@ export function activate(context: vscode.ExtensionContext) {
       );
 
       if (selectedPack) {
-        // Update state
-        await context.globalState.update(
-          'hadarIcons.activeIconPack',
-          selectedPack.pack.name,
-        );
-
         try {
-          await updateIconPacks(context, selectedPack.pack);
-          const reload = await vscode.window.showInformationMessage(
-            `Icon pack set to ${selectedPack.label}. Reload window to apply changes?`,
-            'Reload',
+          // Update configuration (this will trigger the onDidChangeConfiguration listener)
+          await config.update(
+            'activeIconPack',
+            selectedPack.pack.name,
+            vscode.ConfigurationTarget.Global,
           );
-          if (reload === 'Reload') {
-            vscode.commands.executeCommand('workbench.action.reloadWindow');
-          }
         } catch (error: any) {
           vscode.window.showErrorMessage(
-            `Failed to update icon packs: ${error.message}`,
+            `Failed to update icon pack configuration: ${error.message}`,
           );
         }
       }
@@ -174,6 +164,46 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   context.subscriptions.push(configurePacksDisposable);
+
+  // Listen for configuration changes
+  context.subscriptions.push(
+    vscode.workspace.onDidChangeConfiguration(async (e) => {
+      if (e.affectsConfiguration('hadar-icons.activeIconPack')) {
+        const packName = vscode.workspace
+          .getConfiguration('hadar-icons')
+          .get<string>('activeIconPack', 'angular');
+        const pack = packs.find((p) => p.name === packName);
+
+        if (pack) {
+          try {
+            await updateIconPacks(context, pack);
+            const reload = await vscode.window.showInformationMessage(
+              `Hadar Icons: Switched to ${pack.label} pack. Reload window to apply changes?`,
+              'Reload',
+            );
+            if (reload === 'Reload') {
+              vscode.commands.executeCommand('workbench.action.reloadWindow');
+            }
+          } catch (error: any) {
+            vscode.window.showErrorMessage(
+              `Failed to apply icon pack: ${error.message}`,
+            );
+          }
+        }
+      }
+    }),
+  );
+
+  // Apply initial configuration on startup
+  const initialPackName = vscode.workspace
+    .getConfiguration('hadar-icons')
+    .get<string>('activeIconPack', 'angular');
+  const initialPack = packs.find((p) => p.name === initialPackName);
+  if (initialPack) {
+    updateIconPacks(context, initialPack).catch((err) =>
+      console.error('Failed to apply initial icon pack:', err),
+    );
+  }
 
   let toggleArrowsDisposable = vscode.commands.registerCommand(
     'hadarIcons.toggleExplorerArrows',

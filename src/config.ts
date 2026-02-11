@@ -2289,6 +2289,69 @@ export const config: IconTheme = {
     'folder-macos-open': {
       iconPath: './icons/folder-macos-open.svg',
     },
+    'nest-module': {
+      iconPath: './icons/nest-module.svg',
+    },
+    'nest-controller': {
+      iconPath: './icons/nest-controller.svg',
+    },
+    'nest-service': {
+      iconPath: './icons/nest-service.svg',
+    },
+    'nest-guard': {
+      iconPath: './icons/nest-guard.svg',
+    },
+    'nest-pipe': {
+      iconPath: './icons/nest-pipe.svg',
+    },
+    'nest-filter': {
+      iconPath: './icons/nest-filter.svg',
+    },
+    'nest-middleware': {
+      iconPath: './icons/nest-middleware.svg',
+    },
+    'nest-decorator': {
+      iconPath: './icons/nest-decorator.svg',
+    },
+    'nest-gateway': {
+      iconPath: './icons/nest-gateway.svg',
+    },
+    'nest-resolver': {
+      iconPath: './icons/nest-resolver.svg',
+    },
+    'ngrx-actions': {
+      iconPath: './icons/ngrx-actions.svg',
+    },
+    'ngrx-effects': {
+      iconPath: './icons/ngrx-effects.svg',
+    },
+    'ngrx-reducer': {
+      iconPath: './icons/ngrx-reducer.svg',
+    },
+    'ngrx-selectors': {
+      iconPath: './icons/ngrx-selectors.svg',
+    },
+    'ngrx-state': {
+      iconPath: './icons/ngrx-state.svg',
+    },
+    'ngrx-entity': {
+      iconPath: './icons/ngrx-entity.svg',
+    },
+    'redux-action': {
+      iconPath: './icons/redux-action.svg',
+    },
+    'redux-reducer': {
+      iconPath: './icons/redux-reducer.svg',
+    },
+    'redux-selector': {
+      iconPath: './icons/redux-selector.svg',
+    },
+    'redux-store': {
+      iconPath: './icons/redux-store.svg',
+    },
+    'vuex-store': {
+      iconPath: './icons/vuex-store.svg',
+    },
   },
   fileExtensions: {
     htm: 'html',

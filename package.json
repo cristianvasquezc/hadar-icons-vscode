@@ -41,7 +41,37 @@
         "label": "Hadar Icons",
         "path": "./themes/hadar-icons.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Hadar Icons",
+      "properties": {
+        "hadar-icons.activeIconPack": {
+          "type": "string",
+          "default": "angular",
+          "description": "Select the active icon pack for framework-specific icons.",
+          "enum": [
+            "default",
+            "angular",
+            "angular_ngrx",
+            "nestjs",
+            "react",
+            "react_redux",
+            "vue",
+            "vue_vuex"
+          ],
+          "enumDescriptions": [
+            "Standard Hadar icons without framework specifics",
+            "Angular icons (components, directives, services, etc.)",
+            "Angular icons with NgRx state management",
+            "NestJS icons (modules, controllers, services, etc.)",
+            "React icons only",
+            "React icons with Redux state management",
+            "Vue icons only",
+            "Vue icons with Vuex state management"
+          ]
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run build",
