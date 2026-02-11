@@ -6,6 +6,17 @@
       "type": "extensionHost",
       "request": "launch",
       "args": ["--extensionDevelopmentPath=${workspaceFolder}"]
+    },
+    {
+      "name": "Extension Web",
+      "type": "pwa-extensionHost",
+      "debugWebWorkerHost": true,
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--extensionDevelopmentKind=web"
+      ],
+      "outFiles": ["${workspaceFolder}/out/web/**/*.js"]
     }
   ]
 }

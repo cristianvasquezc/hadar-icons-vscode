@@ -22,8 +22,13 @@
     "vscode": "^1.105.0"
   },
   "main": "./out/extension.js",
+  "browser": "./out/web/extension.js",
   "categories": [
     "Themes"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
   ],
   "keywords": [
     "hadar theme",
@@ -105,14 +110,17 @@
     "vscode:prepublish": "npm run build",
     "build": "npm run compile && node out/build-icons.js",
     "package": "vsce package",
-    "compile": "npm run bundle-extension && npm run bundle-build-script",
+    "test-web": "vscode-test-web --extensionDevelopmentPath=.",
+    "compile": "npm run bundle-extension && npm run bundle-extension-web && npm run bundle-build-script",
     "bundle-extension": "esbuild ./src/extension.ts --bundle --outfile=out/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "bundle-extension-web": "esbuild ./src/extension-web.ts --bundle --outfile=out/web/extension.js --external:vscode --format=cjs --platform=browser --minify",
     "bundle-build-script": "esbuild ./src/build-icons.ts --bundle --outfile=out/build-icons.js --platform=node --format=cjs --minify",
     "watch": "tsc -watch -p ."
   },
   "devDependencies": {
     "@types/node": "^16.0.0",
     "@types/vscode": "^1.105.0",
+    "@vscode/test-web": "^0.0.79",
     "esbuild": "^0.27.3",
     "typescript": "^4.0.0"
   }
