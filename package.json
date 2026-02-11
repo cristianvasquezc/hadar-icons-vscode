@@ -13,11 +13,15 @@
   ],
   "activationEvents": [
     "onCommand:hadarIcons.changeFolderColor",
-    "onCommand:hadarIcons.configureIconPacks",
-    "onCommand:hadarIcons.toggleExplorerArrows"
+    "onCommand:hadarIcons.toggleExplorerArrows",
+    "onCommand:hadarIcons.activate"
   ],
   "contributes": {
     "commands": [
+      {
+        "command": "hadarIcons.activate",
+        "title": "Hadar Icons: Activate Theme"
+      },
       {
         "command": "hadarIcons.changeFolderColor",
         "title": "Hadar Icons: Change Folder Color"

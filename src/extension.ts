@@ -4,6 +4,28 @@ import * as vscode from 'vscode';
 import { IconPack, packs } from './packs';
 
 export function activate(context: vscode.ExtensionContext) {
+  let activateThemeDisposable = vscode.commands.registerCommand(
+    'hadarIcons.activate',
+    async () => {
+      try {
+        await vscode.workspace
+          .getConfiguration('workbench')
+          .update(
+            'iconTheme',
+            'hadar-icons',
+            vscode.ConfigurationTarget.Global,
+          );
+        vscode.window.showInformationMessage('Hadar Icons theme activated!');
+      } catch (error: any) {
+        vscode.window.showErrorMessage(
+          `Failed to activate theme: ${error.message}`,
+        );
+      }
+    },
+  );
+
+  context.subscriptions.push(activateThemeDisposable);
+
   let disposable = vscode.commands.registerCommand(
     'hadarIcons.changeFolderColor',
     async () => {
